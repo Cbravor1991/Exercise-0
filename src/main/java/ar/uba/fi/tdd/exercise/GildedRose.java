@@ -104,8 +104,15 @@ class GildedRose {
 
                     }
 
+                    if(items[i].sellIn <6 && items[i].sellIn >0  ){
+                        items[i].quality = items[i].quality + 3;
+
+                    }else{
+                        items[i].quality = 0;
+                    }
+
                 }
-            }
+            } // fin caso backstage passes
 
         } //termina eñ for
     }
