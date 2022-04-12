@@ -128,7 +128,9 @@ class GildedRose {
                 }
                 // fin caso aged brief
             }
-           /* //caso Sulfuras
+            //caso Sulfuras
+
+
             if(items[i].Name.equals("Sulfuras, Hand of Ragnaros")){
                 items[i].sellIn = items[i].sellIn -1;
 
@@ -138,7 +140,7 @@ class GildedRose {
                 items[i].sellIn = items[i].sellIn -1;
                 items[i].quality = items[i].quality - 2;
 
-            }*/
+            }
 
 
         } //termina eñ for

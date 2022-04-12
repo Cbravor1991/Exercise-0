@@ -31,4 +31,23 @@ class GildedRoseTest {
 		assertThat(5).isEqualTo(app.items[0].quality);
 	}
 
+	@Test
+	public void sulfuras() {
+		Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 49, 80) };
+		GildedRose app = new GildedRose(items);
+		app.updateQuality();
+		assertThat(80).isEqualTo(app.items[0].quality);
+	}
+
+	@Test
+	public void conjured() {
+		Item[] items = new Item[] { new Item("conjured", 49, 80) };
+		GildedRose app = new GildedRose(items);
+		app.updateQuality();
+		assertThat(78).isEqualTo(app.items[0].quality);
+	}
+
+
+
+
 }
