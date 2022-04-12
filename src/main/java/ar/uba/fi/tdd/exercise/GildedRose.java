@@ -101,11 +101,13 @@ class GildedRose {
                 if(items[i].quality <50){
                     if(items[i].sellIn <11 && items[i].sellIn >3  ){
                         items[i].quality = items[i].quality + 2;
+                        items[i].sellIn = items[i].sellIn -1;
 
                     }
 
                     if(items[i].sellIn <6 && items[i].sellIn >0  ){
                         items[i].quality = items[i].quality + 3;
+                        items[i].sellIn = items[i].sellIn -1;
 
                     }else{
                         items[i].quality = 0;
@@ -118,8 +120,22 @@ class GildedRose {
             if(items[i].Name.equals("Aged Brie")){
                 if(items[i].quality <50){
                     items[i].quality = items[i].quality + 1;
+                    items[i].sellIn = items[i].sellIn -1;
                 }
-            } // fin caso aged brief
+                // fin caso aged brief
+            }
+            //caso Sulfuras
+            if(items[i].Name.equals("Sulfuras, Hand of Ragnaros")){
+                items[i].sellIn = items[i].sellIn -1;
+
+                }
+            //caso conjured
+            if(items[i].Name.equals("conjured")){
+                items[i].sellIn = items[i].sellIn -1;
+                items[i].quality = items[i].quality - 2;
+
+            }
+
 
         } //termina eñ for
     }
