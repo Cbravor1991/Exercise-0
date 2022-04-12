@@ -3,45 +3,13 @@ package ar.uba.fi.tdd.exercise;
 
 class GildedRose {
   Item[] items;
+  Quality calidad = new Quality();
 
     public GildedRose(Item[] _items) {
         items = _items;
     }
 
 
-    public void disminuirCalidadAgedBrieCaso(Item item){
-        if (item.quality < 50) {
-            item.quality = item.quality + 1;
-
-            if (item.Name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                if (item.sellIn < 11) {
-                    if (item.quality < 50) {
-                        item.quality = item.quality + 1;
-                    }
-                }
-                // si es menor que 6
-                if (item.sellIn < 6) {
-                    // si la cantidad es es menor que 50
-                    if (item.quality < 50) {
-                        // sumo 1 a la calidad
-                        item.quality = item.quality + 1;
-                    }
-                }
-            }
-        }
-    }
-
-    public void disminuirCalidaCasoDefault(Item item) {
-        if (!item.Name.equals("Aged Brie")
-                && !item.Name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-            if (item.quality > 0)
-                if (!item.Name.equals("Sulfuras, Hand of Ragnaros"))
-                    item.quality = item.quality - 1;
-        } else {
-            disminuirCalidadAgedBrieCaso(item);
-        }
-
-    }
         // update the quality of the emements
     public void updateQuality() {
         // for each item
@@ -100,8 +68,7 @@ class GildedRose {
             if(items[i].Name.equals("Backstage passes to a TAFKAL80ETC concert")){
                 if(items[i].quality <50){
                     if(items[i].sellIn <11 && items[i].sellIn >3  ){
-                        items[i].quality = items[i].quality + 2;
-                        items[i].sellIn = items[i].sellIn -1;
+                        calidad.duplicarCalidad(items[i]);
 
                     }
 
