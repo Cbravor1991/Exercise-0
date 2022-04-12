@@ -73,13 +73,11 @@ class GildedRose {
                     }
 
                     if(items[i].sellIn <6 && items[i].sellIn >0  ){
-                        items[i].quality = items[i].quality + 3;
-                        items[i].sellIn = items[i].sellIn -1;
-
+                        calidad.triplicarCalidad(items[i]);
                     }
 
                     if(items[i].sellIn <=0){
-                        items[i].quality = 0;
+                        calidad.calidadNula(items[i]);
 
                     }
 
@@ -90,8 +88,7 @@ class GildedRose {
             //caso aged brief
             if(items[i].Name.equals("Aged Brie")){
                 if(items[i].quality <50){
-                    items[i].quality = items[i].quality + 1;
-                    items[i].sellIn = items[i].sellIn -1;
+                    calidad.aumentarCalidad(items[i]);
                 }
                 // fin caso aged brief
             }
@@ -104,9 +101,7 @@ class GildedRose {
                 }
             //caso conjured
             if(items[i].Name.equals("conjured")){
-                items[i].sellIn = items[i].sellIn -1;
-                items[i].quality = items[i].quality - 2;
-
+                calidad.disminuyeCalidadPorDos(items[i]);
             }
 
 
