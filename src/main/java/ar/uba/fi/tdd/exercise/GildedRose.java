@@ -120,7 +120,7 @@ class GildedRose {
                 }
             } // fin caso backstage passes
 
-           /* //caso aged brief
+            //caso aged brief
             if(items[i].Name.equals("Aged Brie")){
                 if(items[i].quality <50){
                     items[i].quality = items[i].quality + 1;
@@ -128,7 +128,7 @@ class GildedRose {
                 }
                 // fin caso aged brief
             }
-            //caso Sulfuras
+           /* //caso Sulfuras
             if(items[i].Name.equals("Sulfuras, Hand of Ragnaros")){
                 items[i].sellIn = items[i].sellIn -1;
 

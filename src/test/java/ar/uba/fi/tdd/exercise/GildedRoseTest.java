@@ -23,4 +23,12 @@ class GildedRoseTest {
 		assertThat(6).isEqualTo(app.items[0].quality);
 	}
 
+	@Test
+	public void agedBrie() {
+		Item[] items = new Item[] { new Item("Aged Brie", 49, 4) };
+		GildedRose app = new GildedRose(items);
+		app.updateQuality();
+		assertThat(5).isEqualTo(app.items[0].quality);
+	}
+
 }
