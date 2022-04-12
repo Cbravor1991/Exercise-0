@@ -15,4 +15,12 @@ class GildedRoseTest {
 			assertThat("fixme").isEqualTo(app.items[0].Name);
 	}
 
+	@Test
+	public void backstagePasses() {
+		Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 9, 4) };
+		GildedRose app = new GildedRose(items);
+		app.updateQuality();
+		assertThat(6).isEqualTo(app.items[0].quality);
+	}
+
 }
