@@ -1,7 +1,7 @@
 package ar.uba.fi.tdd.exercise;
 
 public class Quality {
-
+    SellIn sellin = new SellIn();
 
     //constructor
     public Quality(){
@@ -10,26 +10,27 @@ public class Quality {
 
     public void aumentarCalidad(Item item){
         item.quality = item.quality + 1;
-        item.sellIn = item.sellIn -1;
+        sellin.dismunirDiaDisponibles(item);
     }
 
     public void duplicarCalidad(Item item){
         item.quality = item.quality + 2;
-        item.sellIn = item.sellIn -1;
+        sellin.dismunirDiaDisponibles(item);
     }
 
     public void triplicarCalidad(Item item){
         item.quality = item.quality + 3;
+        sellin.dismunirDiaDisponibles(item);
 
     }
 
     public void calidadNula (Item item){
         item.quality = 0;
-        item.sellIn = item.sellIn -1;
+        sellin.dismunirDiaDisponibles(item);
     }
 
     public void disminuyeCalidadPorDos (Item item){
-        item.sellIn = item.sellIn -1;
+        sellin.dismunirDiaDisponibles(item);
         item.quality = item.quality - 2;
 
     }
