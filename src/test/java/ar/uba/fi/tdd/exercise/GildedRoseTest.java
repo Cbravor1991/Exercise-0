@@ -7,13 +7,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 class GildedRoseTest {
 
-	@Test
-	public void foo() {
-			Item[] items = new Item[] { new Item("fixme", 0, 0) };
-			GildedRose app = new GildedRose(items);
-			app.updateQuality();
-			assertThat("fixme").isEqualTo(app.items[0].Name);
-	}
 
 	@Test
 	public void backstagePasses() {
@@ -32,15 +25,15 @@ class GildedRoseTest {
 	}
 
 	@Test
-	public void backstagePasses_Pasado_concierto() {
-		Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 0, 4) };
+	public void backstagePassesPasadoConcierto() {
+		Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", -1, 4) };
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
 		assertThat(0).isEqualTo(app.items[0].quality);
 	}
 
 	@Test
-	public void backstagePasses_NoSupera_calidad50() {
+	public void backstagePassesNoSuperaCalidad50() {
 		Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 0, 50) };
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
@@ -51,7 +44,7 @@ class GildedRoseTest {
 
 
 	@Test
-	public void agedBrie_NoSupera_calidad50() {
+	public void agedBrieNoSuperaCalidad50() {
 		Item[] items = new Item[] { new Item("Aged Brie", 49, 50) };
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
@@ -76,6 +69,30 @@ class GildedRoseTest {
 	@Test
 	public void conjured() {
 		Item[] items = new Item[] { new Item("conjured", 49, 50) };
+		GildedRose app = new GildedRose(items);
+		app.updateQuality();
+		assertThat(48).isEqualTo(app.items[0].quality);
+	}
+
+	@Test
+	public void conjuredPasadoFechaDeVencimiento() {
+		Item[] items = new Item[] { new Item("conjured", -1, 50) };
+		GildedRose app = new GildedRose(items);
+		app.updateQuality();
+		assertThat(46).isEqualTo(app.items[0].quality);
+	}
+
+	@Test
+	public void articuloNormal() {
+		Item[] items = new Item[] { new Item("normal", 49, 50) };
+		GildedRose app = new GildedRose(items);
+		app.updateQuality();
+		assertThat(49).isEqualTo(app.items[0].quality);
+	}
+
+	@Test
+	public void articuloNormalPasadoFechaDeVencimiento() {
+		Item[] items = new Item[] { new Item("normal", -1, 50) };
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
 		assertThat(48).isEqualTo(app.items[0].quality);

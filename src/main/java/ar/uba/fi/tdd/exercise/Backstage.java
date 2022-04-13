@@ -11,13 +11,20 @@ public class Backstage {
         boolean calidadActualizada = false;
         if(item.quality <50){
 
+
+
             if(item.sellIn <0 && calidadActualizada == false){
                 calidad.calidadNula(item);
                 calidadActualizada = true;
 
             }
 
+
+
             if(item.sellIn <6 && item.sellIn >=0 && calidadActualizada == false  ){
+                if (item.quality>47){
+
+                }
                 calidad.triplicarCalidad(item);
                 calidadActualizada = true;
             }
