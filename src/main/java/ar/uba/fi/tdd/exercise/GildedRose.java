@@ -9,6 +9,8 @@ class GildedRose {
   Sulfuras sulfuras = new Sulfuras();
   Conjured conjured = new Conjured();
 
+  ComunYCorriente comun = new ComunYCorriente();
+
     public GildedRose(Item[] _items) {
         items = _items;
     }
@@ -19,6 +21,12 @@ class GildedRose {
         // for each item
         for (int i = 0; i < items.length; i++) {
 
+            // caso articulo comun y corriente
+
+            if(!items[i].Name.equals("Backstage passes to a TAFKAL80ETC concert") && !items[i].Name.equals("Aged Brie")
+            && !items[i].Name.equals("Sulfuras, Hand of Ragnaros") && !items[i].Name.equals("conjured") ){
+                comun.modificarCalidad(items[i]);
+            } // fin caso backstage passes
 
             //caso backstage passes
             if(items[i].Name.equals("Backstage passes to a TAFKAL80ETC concert")){

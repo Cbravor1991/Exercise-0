@@ -8,20 +8,28 @@ public class Backstage {
     }
 
     public void modificarCalidad(Item item){
+        boolean calidadActualizada = false;
         if(item.quality <50){
-            if(item.sellIn <11 && item.sellIn >3  ){
-                calidad.duplicarCalidad(item);
 
-            }
-
-            if(item.sellIn <6 && item.sellIn >0  ){
-                calidad.triplicarCalidad(item);
-            }
-
-            if(item.sellIn <=0){
+            if(item.sellIn <0 && calidadActualizada == false){
                 calidad.calidadNula(item);
+                calidadActualizada = true;
 
             }
+
+            if(item.sellIn <6 && item.sellIn >=0 && calidadActualizada == false  ){
+                calidad.triplicarCalidad(item);
+                calidadActualizada = true;
+            }
+            if(item.sellIn <11 && item.sellIn >3 && calidadActualizada == false  ){
+                calidad.duplicarCalidad(item);
+                calidadActualizada = true;
+
+            }
+
+
+
+
     }
 
 }

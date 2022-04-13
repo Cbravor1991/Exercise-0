@@ -24,6 +24,40 @@ class GildedRoseTest {
 	}
 
 	@Test
+	public void backstagePasses_SellIn_5_Dias() {
+		Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 4) };
+		GildedRose app = new GildedRose(items);
+		app.updateQuality();
+		assertThat(7).isEqualTo(app.items[0].quality);
+	}
+
+	@Test
+	public void backstagePasses_Pasado_concierto() {
+		Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 0, 4) };
+		GildedRose app = new GildedRose(items);
+		app.updateQuality();
+		assertThat(0).isEqualTo(app.items[0].quality);
+	}
+
+	@Test
+	public void backstagePasses_NoSupera_calidad50() {
+		Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 0, 50) };
+		GildedRose app = new GildedRose(items);
+		app.updateQuality();
+		assertThat(50).isEqualTo(app.items[0].quality);
+	}
+
+
+
+
+	@Test
+	public void agedBrie_NoSupera_calidad50() {
+		Item[] items = new Item[] { new Item("Aged Brie", 49, 50) };
+		GildedRose app = new GildedRose(items);
+		app.updateQuality();
+	}
+
+	@Test
 	public void agedBrie() {
 		Item[] items = new Item[] { new Item("Aged Brie", 49, 4) };
 		GildedRose app = new GildedRose(items);
@@ -41,11 +75,14 @@ class GildedRoseTest {
 
 	@Test
 	public void conjured() {
-		Item[] items = new Item[] { new Item("conjured", 49, 80) };
+		Item[] items = new Item[] { new Item("conjured", 49, 50) };
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
-		assertThat(78).isEqualTo(app.items[0].quality);
+		assertThat(48).isEqualTo(app.items[0].quality);
 	}
+
+
+
 
 
 

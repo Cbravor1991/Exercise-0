@@ -34,5 +34,14 @@ public class Quality {
         item.quality = item.quality - 2;
 
     }
+    public void disminuyeCalidadPorCuatro (Item item){
+        sellin.dismunirDiaDisponibles(item);
+        item.quality = item.quality - 4;
 
+    }
+    public void disminuyeCalidadPorUn0 (Item item){
+        sellin.dismunirDiaDisponibles(item);
+        item.quality = item.quality - 1;
+
+    }
 }
