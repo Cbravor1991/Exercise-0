@@ -99,6 +99,15 @@ class GildedRoseTest {
 	}
 
 	@Test
+	public void conjured_No_Baja_Calidad_del_valor_0() {
+		Item[] items = new Item[] { new Item("conjured", 1, 1) };
+		GildedRose app = new GildedRose(items);
+		app.updateQuality();
+		assertThat(0).isEqualTo(app.items[0].quality);
+	}
+
+
+	@Test
 	public void articuloNormal() {
 		Item[] items = new Item[] { new Item("normal", 49, 50) };
 		GildedRose app = new GildedRose(items);
@@ -114,7 +123,13 @@ class GildedRoseTest {
 		assertThat(48).isEqualTo(app.items[0].quality);
 	}
 
-
+	@Test
+	public void articuloNormal_No_Baja_Calidad_del_valor_0() {
+		Item[] items = new Item[] { new Item("normal", -1, 1) };
+		GildedRose app = new GildedRose(items);
+		app.updateQuality();
+		assertThat(0).isEqualTo(app.items[0].quality);
+	}
 
 
 

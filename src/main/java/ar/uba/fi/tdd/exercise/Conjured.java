@@ -9,12 +9,18 @@ public class Conjured {
     public void modificarCalidad(Item item) {
 
 
-        if (item.sellIn > 0 && item.quality>=2) {
-        calidad.disminuyeCalidadPorDos(item);
+        if (item.sellIn >= 0 )  {
+            if(item.quality>=2){
+        calidad.disminuyeCalidadPorDos(item);} else{
+                calidad.calidadNula(item);
+            }
         }
 
-        if (item.sellIn < 0 && item.quality>=4) {
+        if (item.sellIn < 0) {
+            if(item.quality>=4){
             calidad.disminuyeCalidadPorCuatro(item);
+        }else{
+            calidad.calidadNula(item);}
         }
 
     }

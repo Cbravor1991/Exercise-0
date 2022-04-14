@@ -8,12 +8,16 @@ public class ComunYCorriente {
     }
 
     public void modificarCalidad(Item item) {
-        if (item.sellIn > 0 && item.quality>=1) {
+        if (item.sellIn >= 0 && item.quality>=1) {
             calidad.disminuyeCalidadPorUn0(item);
         }
 
-        if (item.sellIn < 0 && item.quality>=2) {
-            calidad.disminuyeCalidadPorDos(item);
+        if (item.sellIn < 0) {
+            if(item.quality>=2){
+            calidad.disminuyeCalidadPorDos(item);}else{
+                calidad.calidadNula(item);
+
+            }
         }
 
     }
