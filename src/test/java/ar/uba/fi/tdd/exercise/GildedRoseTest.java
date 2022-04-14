@@ -17,11 +17,27 @@ class GildedRoseTest {
 	}
 
 	@Test
-	public void backstagePasses_SellIn_5_Dias() {
+	public void backstagePassesNoSuperaCalidad50_Faltando9dias() {
+		Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 9, 49) };
+		GildedRose app = new GildedRose(items);
+		app.updateQuality();
+		assertThat(50).isEqualTo(app.items[0].quality);
+	}
+
+	@Test
+	public void backstagePassesSellIn_5_Dias() {
 		Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 4) };
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
 		assertThat(7).isEqualTo(app.items[0].quality);
+	}
+
+	@Test
+	public void backstagePassesSellIn_5_Dias_NoSupera_Calidad_50() {
+		Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 48) };
+		GildedRose app = new GildedRose(items);
+		app.updateQuality();
+		assertThat(50).isEqualTo(app.items[0].quality);
 	}
 
 	@Test

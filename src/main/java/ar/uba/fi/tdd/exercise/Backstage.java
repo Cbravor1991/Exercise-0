@@ -23,13 +23,18 @@ public class Backstage {
 
             if(item.sellIn <6 && item.sellIn >=0 && calidadActualizada == false  ){
                 if (item.quality>47){
+                    calidad.establecerMaximoCalidad(item);
 
-                }
-                calidad.triplicarCalidad(item);
+                }else{
+                calidad.triplicarCalidad(item);}
                 calidadActualizada = true;
             }
             if(item.sellIn <11 && item.sellIn >3 && calidadActualizada == false  ){
-                calidad.duplicarCalidad(item);
+                if (item.quality>48){
+                    calidad.establecerMaximoCalidad(item);
+
+                }else{
+                calidad.duplicarCalidad(item);}
                 calidadActualizada = true;
 
             }
