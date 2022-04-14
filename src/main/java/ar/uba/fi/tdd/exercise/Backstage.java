@@ -12,7 +12,7 @@ public class Backstage {
         if(item.quality <50){
 
             if(item.sellIn >10 && calidadActualizada == false){
-                calidad.disminuyeCalidadPorUn0(item);
+                calidad.aumentarCalidadPorUno(item);
                 calidadActualizada = true;
 
             }
@@ -30,7 +30,7 @@ public class Backstage {
                     calidad.establecerMaximoCalidad(item);
 
                 }else{
-                calidad.triplicarCalidad(item);}
+                calidad.aumentarCalidadPorTres(item);}
                 calidadActualizada = true;
             }
             if(item.sellIn <11 && item.sellIn >3 && calidadActualizada == false  ){
@@ -38,7 +38,7 @@ public class Backstage {
                     calidad.establecerMaximoCalidad(item);
 
                 }else{
-                calidad.duplicarCalidad(item);}
+                calidad.aumentarCalidadPorDos(item);}
                 calidadActualizada = true;
 
             }

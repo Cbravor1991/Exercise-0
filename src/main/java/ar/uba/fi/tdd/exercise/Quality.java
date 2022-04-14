@@ -8,13 +8,13 @@ public class Quality {
 
     }
 
-    public void aumentarCalidad(Item item){
+    public void aumentarCalidadPorUno(Item item){
         if(item.sellIn<=49){
         item.quality = item.quality + 1;}
         sellin.dismunirDiaDisponibles(item);
     }
 
-    public void duplicarCalidad(Item item){
+    public void aumentarCalidadPorDos(Item item){
         if(item.sellIn<=48){
         item.quality = item.quality + 2;}else{
             item.quality= 50;
@@ -23,7 +23,7 @@ public class Quality {
         sellin.dismunirDiaDisponibles(item);
     }
 
-    public void triplicarCalidad(Item item){
+    public void aumentarCalidadPorTres(Item item){
         if(item.sellIn<=47){
         item.quality = item.quality + 3;} else{
             item.quality= 50;

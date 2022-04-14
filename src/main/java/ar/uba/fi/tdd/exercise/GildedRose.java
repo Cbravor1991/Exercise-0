@@ -26,12 +26,12 @@ class GildedRose {
             if(!items[i].Name.equals("Backstage passes to a TAFKAL80ETC concert") && !items[i].Name.equals("Aged Brie")
             && !items[i].Name.equals("Sulfuras, Hand of Ragnaros") && !items[i].Name.equals("conjured") ){
                 comun.modificarCalidad(items[i]);
-            } // fin caso backstage passes
+            }
 
             //caso backstage passes
             if(items[i].Name.equals("Backstage passes to a TAFKAL80ETC concert")){
                 backstage.modificarCalidad(items[i]);
-            } // fin caso backstage passes
+            }
 
             //caso aged brief
             if(items[i].Name.equals("Aged Brie")){
@@ -51,6 +51,6 @@ class GildedRose {
             }
 
 
-        } //termina eñ for
+        } //termina for
     }
 }

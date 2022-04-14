@@ -8,7 +8,7 @@ public class AgedBrie {
 
     public void modificarCalidad(Item item){
         if(item.quality <50){
-            calidad.aumentarCalidad(item);
+            calidad.aumentarCalidadPorUno(item);
         }
     }
 }
