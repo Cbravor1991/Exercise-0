@@ -7,16 +7,18 @@ public class Conjured {
     public Conjured (){}
 
     public void modificarCalidad(Item item) {
+        boolean calidadActualizada = false;
 
-
-        if (item.sellIn >= 0 )  {
+        if (item.sellIn >= 0 && calidadActualizada == false )  {
+            calidadActualizada = true;
             if(item.quality>=2){
         calidad.disminuyeCalidadPorDos(item);} else{
                 calidad.calidadNula(item);
             }
         }
 
-        if (item.sellIn < 0) {
+        if (item.sellIn < 0 && calidadActualizada == false) {
+            calidadActualizada = true;
             if(item.quality>=4){
             calidad.disminuyeCalidadPorCuatro(item);
         }else{
